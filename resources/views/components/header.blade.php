@@ -1,15 +1,18 @@
 <header class="bg-primary-indigo">
-    <div class="scroll-header">
+    <x-header-mobile/>
+   
+
+    <div class="scroll-header ">
         <div class="bg-primary-blue py-2">
             <p class="text-center">
                 Welcome to petech, 25 Years Of Experience In IT Consulting & Solutions
             </p>
         </div>
-        <div class="bg-white flex items-center justify-around py-4">
+        <div class="flex bg-white items-center justify-around py-4">
             <div>
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full lg:h-12 h-8">
             </div>
-            <div class="flex items-center justify-between gap-8">
+            <div class="flex items-center justify-between lg:gap-8 gap-4">
                 <x-header.nav-icon-content
                     key="Phone Number"
                     value="+1 234 567 890"
@@ -38,8 +41,8 @@
         </div>
     </div>
 
-    <nav class="bg-primary-indigo py-4 sticky-nav w-full z-50">
-        <div class="flex items-center justify-center gap-16">
+    <nav class="bg-primary-indigo py-4 sticky-nav w-full z-50 md:block hidden">
+        <div class="flex items-center justify-center lg:gap-16 gap-8">
             <ul class="items-center flex gap-4">
                 @php
                     $navItems = [
@@ -60,7 +63,7 @@
                 @endforeach
             </ul>
             <div class="flex items-center gap-4">
-                <div class="relative inline-block group overflow-hidden rounded-md border-2 border-white bg-white">
+                <div class="relative group cursor-pointer overflow-hidden rounded-md border-2 border-white bg-white">
                   <div class="absolute inset-0 bg-primary-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0"></div>
               
                   <div class="relative z-10 px-6 py-4 text-primary-blue group-hover:text-white transition-colors duration-500">
@@ -75,6 +78,7 @@
               
         </div>
     </nav>
+    
 </header>
 
 <script>
@@ -124,12 +128,23 @@
 </script>
 
 <style>
+    @media (width >= 48rem) {
+        .scroll-header {
+            display: block;
+        }
+    }
+    @media (width <= 48rem) {
+        .scroll-header {
+            display: none !important;
+        }
+    }
     .scroll-header {
         transition: transform 0.3s ease;
         will-change: transform;
         transform-origin: top;
         overflow: hidden;
     }
+
     
     .sticky-nav {
         transition: all 0.3s ease;
