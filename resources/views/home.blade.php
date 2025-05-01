@@ -8,8 +8,9 @@
     </head>
         <body >
             <x-header/>
-            <main class="min-h-[200vh]">
+            <main class="min-h-[200vh] space-y-16">
                 <x-hero/>
+                <x-about/>
             </main>
         </body>
 </html>

@@ -13,12 +13,12 @@
         <h2 class="md:text-7xl text-4xl"> {{$subtitle}} </h2>
         <h2 class="md:text-7xl text-4xl font-bold"> {{$description}} </h2>
         <div class="container-btn-hero flex items-center justify-center gap-8">
-            <flux:hero.custom-button variant="secondary" >
+            <flux:custom-button variant="secondary" >
                 GET STARTED + 
-           </flux:hero.custom-button> 
-           <flux:hero.custom-button>
+           </flux:custom-button> 
+           <flux:custom-button>
                 LEARN MORE + 
-           </flux:hero.custom-button>                          
+           </flux:custom-button>                          
         </div>
     </div>
 </div>

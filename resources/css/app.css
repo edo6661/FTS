@@ -84,6 +84,6 @@ select:focus[data-flux-control] {
 
 @layer base {
     body {
-        @apply font-montserrat text-sm;
+        @apply font-montserrat text-sm bg-white;
     }
 }

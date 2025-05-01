@@ -63,11 +63,11 @@
                 @endforeach
             </ul>
             <div class="flex items-center gap-4">
-                <flux:hero.custom-button
+                <flux:custom-button
                     
                 >
                     GET STARTED +
-                </flux:hero.custom-button>
+                </flux:custom-button>
               
                 <div class="bg-primary-blue px-4 py-4 rounded-md">
                   <x-zondicon-search class="text-white w-4 h-4" />
