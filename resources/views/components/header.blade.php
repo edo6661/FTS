@@ -63,13 +63,11 @@
                 @endforeach
             </ul>
             <div class="flex items-center gap-4">
-                <div class="relative group cursor-pointer overflow-hidden rounded-md border-2 border-white bg-white">
-                  <div class="absolute inset-0 bg-primary-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0"></div>
-              
-                  <div class="relative z-10 px-6 py-4 text-primary-blue group-hover:text-white transition-colors duration-500">
-                    <a class="font-semibold">GET STARTED +</a>
-                  </div>
-                </div>
+                <flux:hero.custom-button
+                    
+                >
+                    GET STARTED +
+                </flux:hero.custom-button>
               
                 <div class="bg-primary-blue px-4 py-4 rounded-md">
                   <x-zondicon-search class="text-white w-4 h-4" />

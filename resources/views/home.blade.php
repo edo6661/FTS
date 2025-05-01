@@ -8,7 +8,8 @@
     </head>
         <body >
             <x-header/>
-            <main class="bg-red-500 min-h-[200vh]">
+            <main class="min-h-[200vh]">
+                <x-hero/>
             </main>
         </body>
 </html>
