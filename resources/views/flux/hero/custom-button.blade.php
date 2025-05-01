@@ -17,7 +17,7 @@ $classes = Flux::classes()
         'secondary' => 'bg-white',
     });
 $textClasses = Flux::classes()
-    ->add('relative z-10 px-6 py-4 transition-colors duration-500')
+    ->add('relative z-10  md:px-6 md:py-4 px-4 py-2 transition-colors duration-500')
     ->add(match($variant) {
         'primary' => 'text-primary-blue group-hover:text-white',
         'secondary' => 'group-hover:text-black text-white',

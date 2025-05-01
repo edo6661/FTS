@@ -1,45 +1,23 @@
 <section id="hero" class="min-h-[70vh]">
     <div class="container-slider relative min-h-[70vh]">
-        <div class="contaimer-items-slider relative">
-            <div class="slide-item">
-                <div class="container-bg-hero absolute inset-0">
-                    <img src="{{asset('images/hero.jpg')}}" alt="Hero Slider 1"/>
-                </div>
-                <div class="container-content-hero flex flex-col justify-center items-center text-center text-white z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span> IT Consulting </span>
-                    <h2> Best IT Solutions </h2>
-                    <h2> For Your Petech </h2>
-                    <div class="container-btn-hero flex items-center justify-center gap-8">
-                        <flux:hero.custom-button variant="secondary" >
-                            GET STARTED + 
-                       </flux:hero.custom-button> 
-                       <flux:hero.custom-button>
-                            LEARN MORE + 
-                       </flux:hero.custom-button>                          
-                    </div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="container-bg-hero absolute inset-0">
-                    <img src="{{asset('images/hero-2.png')}}" alt="Hero Slider 2"/>
-                </div>
-                <div class="container-content-hero flex flex-col justify-center items-center text-center text-white z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span> Cloud Services </span>
-                    <h2> Reliable Cloud </h2>
-                    <h2> Infrastructure </h2>
-                    <div class="container-btn-hero flex items-center justify-center gap-8">
-                        <flux:hero.custom-button variant="secondary" >
-                             GET STARTED + 
-                        </flux:hero.custom-button> 
-                        <flux:hero.custom-button>
-                             LEARN MORE + 
-                        </flux:hero.custom-button>                    
-                    </div>
-                </div>
-            </div>
+        <div class="container-items-slider relative">
+            <x-hero.slide-item 
+                title="IT Consulting"
+                subtitle="Best IT Solutions"
+                description="For Your Petech"
+                :image="asset('images/hero.jpg')"
+            />
+            <x-hero.slide-item 
+                title="IT Services Provider"
+                subtitle="Real Economy"
+                description="IT Solutions"
+                :image="asset('images/hero-2.png')"
+            />
         </div>
-        <button class="slider-control prev">&lt;</button>
-        <button class="slider-control next">&gt;</button>
+        <div class="control-container">
+            <button class="slider-control prev">&lt;</button>
+            <button class="slider-control next">&gt;</button> 
+        </div>
     </div>
 </section>
 
@@ -50,7 +28,7 @@
         width: 100%;
     }
 
-    .contaimer-items-slider {
+    .container-items-slider {
         display: flex;
         transition: transform 0.5s ease;
         width: 200%;
@@ -86,25 +64,14 @@
         padding: 0 20px;
     }
 
-    .container-content-hero span {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        display: block;
-    }
-
-    .container-content-hero h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.25rem;
-    }
-
-
-    .custom-button.secondary {
-        background-color: white;
-        color: black;
-    }
-
-    .custom-button:hover {
-        transform: translateY(-5px);
+    .control-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        pointer-events: none;
     }
 
     .slider-control {
@@ -119,11 +86,13 @@
         border-radius: 50%;
         font-size: 24px;
         cursor: pointer;
-        z-index: 20;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: auto; 
     }
 
     .slider-control:hover {
@@ -131,17 +100,30 @@
     }
 
     .slider-control.prev {
-        left: 20px;
+        left: -60px;
     }
-
+    
     .slider-control.next {
+        right: -60px;
+    }
+    
+    #hero:hover .slider-control {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    #hero:hover .slider-control.next {
         right: 20px;
+    }
+    
+    #hero:hover .slider-control.prev {
+        left: 20px;
     }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const slider = document.querySelector('.contaimer-items-slider');
+        const slider = document.querySelector('.container-items-slider');
         const slides = document.querySelectorAll('.slide-item');
         const prevBtn = document.querySelector('.slider-control.prev');
         const nextBtn = document.querySelector('.slider-control.next');
