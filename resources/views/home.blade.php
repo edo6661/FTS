@@ -12,6 +12,8 @@
                 <x-hero/>
                 <x-about/>
                 <x-what-we-do/>
+                <x-banner-consultation/>
+                <x-team/>
             </main>
         </body>
 </html>
