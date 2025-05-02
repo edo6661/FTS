@@ -3,7 +3,7 @@
         <div class="container-about-image">
             <img src="{{ asset('images/about.png') }}"/>
         </div>
-        <div class="container-about-shape-2 absolute bottom-0 left-0 -z-10 animate-pulse rotate">
+        <div class="container-about-shape-2 absolute bottom-0 left-4 -z-10 animate-pulse rotate">
             <img src="{{ asset('images/shape-about-2.png') }}"/>
         </div>
         <div class="container-about-shape absolute right-0 top-0 -z-10 animate-pulse top-bottom">
@@ -37,28 +37,3 @@
         </flux:custom-button>
     </div>
 </section>
-
-<style>
-    .rotate {
-        animation: rotate 20s linear infinite;
-    }
-    .top-bottom {
-        animation: top-bottom 2s linear infinite;
-    }
-    @keyframes top-bottom {
-        0% {
-            transform: translateY(0);
-        }
-        100% {
-            transform: translateY(-20px);
-        }
-    }
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-</style>

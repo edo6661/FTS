@@ -11,6 +11,7 @@
             <main class="min-h-[200vh] space-y-16">
                 <x-hero/>
                 <x-about/>
+                <x-what-we-do/>
             </main>
         </body>
 </html>

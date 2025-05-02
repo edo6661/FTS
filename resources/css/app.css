@@ -87,3 +87,35 @@ select:focus[data-flux-control] {
         @apply font-montserrat text-sm bg-white;
     }
 }
+
+/* general animation */
+.rotate {
+    animation: rotate 20s linear infinite;
+}
+.top-bottom {
+    animation: top-bottom 5s ease-in-out infinite;
+}
+
+@keyframes top-bottom {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
