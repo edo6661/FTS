@@ -3,19 +3,19 @@ $products = [
     [
         'title' => 'Super Technology',
         'description' => 'Perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium totam rem aperiam',
-        'image' => asset('images/blue-circle.png'),
+        'image' => @svg('hugeicons-nano-technology'),
         'link' => '#'
     ],
     [
-        'title' => 'Super Technology',
+        'title' => 'Product Strategy',
         'description' => 'Perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium totam rem aperiam',
-        'image' => asset('images/blue-circle.png'),
+        'image' => @svg('carbon-product'),
         'link' => '#'
     ],
     [
-        'title' => 'Super Technology',
+        'title' => 'Product Launching',
         'description' => 'Perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium totam rem aperiam',
-        'image' => asset('images/blue-circle.png'),
+        'image' => @svg('clarity-launchpad-line'),
         'link' => '#'
     ]
 ];

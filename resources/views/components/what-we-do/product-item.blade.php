@@ -12,8 +12,16 @@
     <p class="font-nunito-sans text-primary-gray ">
         {{ $description }}
     </p>
-    <div>
-        <img src="{{ $image }}" alt="Super Technoloy" class="w-28 object-cover"/>
+    <div class="container-svg-what-we-do">
+        {{ $image }}
     </div>
    <x-link-read-more :href="$link"/>
 </div>
+
+<style>
+    .container-svg-what-we-do > svg {
+        width: 4rem;
+        height: 4rem;
+        color: var(--primary-blue);
+    }
+</style>
