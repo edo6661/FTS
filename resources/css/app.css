@@ -21,6 +21,7 @@
     --secondary-gray: #eeeeee;
     --tertiary-gray: #ddd;
     --quaternary-gray: #b7b7b7;
+    --quinary-gray: #252241;
 
     --color-primary-blue: var(--primary-blue);
     --color-primary-dark-blue: var(--primary-dark-blue);
@@ -31,6 +32,7 @@
     --color-secondary-gray: var(--secondary-gray);
     --color-tertiary-gray: var(--tertiary-gray);
     --color-quaternary-gray: var(--quaternary-gray);
+    --color-quinary-gray: var(--quinary-gray);
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
     --color-zinc-200: #e5e5e5;

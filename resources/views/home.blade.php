@@ -14,6 +14,7 @@
                 <x-what-we-do/>
                 <x-banner-consultation/>
                 <x-team/>
+                <x-blog/>
             </main>
         </body>
 </html>

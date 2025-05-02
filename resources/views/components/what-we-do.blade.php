@@ -24,7 +24,7 @@ $products = [
     <div class="absolute inset-0">
         <img src="{{ asset("images/what-we-do-bg.jpg") }}" alt="What We Do" class="w-full object-cover h-auto" />
     </div>
-    <div class="absolute top-24 right-0 top-bottom">
+    <div class="absolute top-24 right-0 top-bottom hidden lg:block">
         <img src="{{ asset("images/blue-circle.png") }}" alt="Blue Circle" />
     </div>
     <div class="z-10 relative text-black py-16 space-y-12">

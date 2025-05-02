@@ -15,7 +15,5 @@
     <div>
         <img src="{{ $image }}" alt="Super Technoloy" class="w-28 object-cover"/>
     </div>
-    <a class="font-medium text-primary-gray" href="{{ $link }}">
-        READ MORE <span class="text-primary-blue">+</span>
-    </a>
+   <x-link-read-more :href="$link"/>
 </div>

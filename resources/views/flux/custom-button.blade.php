@@ -10,6 +10,7 @@ $containerClasses = Flux::classes()
         'primary' => 'border-white bg-white',
         'secondary' => 'border-primary-blue bg-primary-blue',
         'tertiary' => 'border-primary-blue bg-primary-blue',
+        
     });
 $classes = Flux::classes()
     ->add('absolute inset-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0')
