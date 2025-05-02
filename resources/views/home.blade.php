@@ -16,5 +16,6 @@
                 <x-team/>
                 <x-blog/>
             </main>
+            <x-footer/>
         </body>
 </html>
