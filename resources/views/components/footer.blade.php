@@ -9,7 +9,7 @@
             </p>
             <div class="flex items-center">
                 <input
-                    class="bg-secondary-gray text-senary-gray rounded-l-md px-4 py-2 w-full"
+                    class="bg-secondary-gray text-senary-gray rounded-l-md px-4 py-2 w-full max-w-[240px] focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent"
                     placeholder="Your email"
                 />
                 <button class="bg-primary-blue text-white rounded-r-md px-4 py-2">
