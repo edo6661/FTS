@@ -14,10 +14,10 @@
         <h2 class="md:text-7xl text-4xl font-bold"> {{$description}} </h2>
         <div class="container-btn-hero flex items-center justify-center gap-8">
             <flux:custom-button variant="secondary" >
-                GET STARTED + 
+                GET STARTED 
            </flux:custom-button> 
            <flux:custom-button>
-                LEARN MORE + 
+                LEARN MORE
            </flux:custom-button>                          
         </div>
     </div>

@@ -66,7 +66,7 @@
                 <flux:custom-button
                     
                 >
-                    GET STARTED +
+                    GET STARTED
                 </flux:custom-button>
               
                 <div class="bg-primary-blue px-4 py-4 rounded-md">

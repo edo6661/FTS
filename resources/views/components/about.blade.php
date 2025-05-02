@@ -33,7 +33,7 @@
             />
         </div>
         <flux:custom-button variant="tertiary" class="w-fit">
-            GET STARTED +
+            GET STARTED
         </flux:custom-button>
     </div>
 </section>
