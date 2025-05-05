@@ -13,10 +13,10 @@ use Livewire\Volt\Component;
 
 new #[Layout('components.layouts.auth')] class extends Component {
     #[Validate('required|string|email')]
-    public string $email = "admin@gmail.com";
+    public string $email = "";
 
     #[Validate('required|string')]
-    public string $password = '12345678';
+    public string $password = '';
 
     public bool $remember = false;
 
