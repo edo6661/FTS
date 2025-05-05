@@ -72,6 +72,11 @@
                 <div class="bg-primary-blue px-4 py-4 rounded-md">
                   <x-zondicon-search class="text-white w-4 h-4" />
                 </div>
+                @if(auth()->check())
+                    <a href="{{ route('admin.dashboard') }}" class="text-white font-nunito-sans text-lg hover:text-primary-blue transition-colors duration-300 ease-in-out font-extrabold">
+                        Dashboard
+                    </a>
+                @endif
               </div>
               
         </div>

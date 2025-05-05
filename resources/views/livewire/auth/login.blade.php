@@ -13,10 +13,10 @@ use Livewire\Volt\Component;
 
 new #[Layout('components.layouts.auth')] class extends Component {
     #[Validate('required|string|email')]
-    public string $email = '';
+    public string $email = "admin@gmail.com";
 
     #[Validate('required|string')]
-    public string $password = '';
+    public string $password = '12345678';
 
     public bool $remember = false;
 
@@ -40,7 +40,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
 
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        $this->redirectIntended(default: route('admin.dashboard', absolute: false), navigate: true);
     }
 
     /**
@@ -100,7 +100,6 @@ new #[Layout('components.layouts.auth')] class extends Component {
                 required
                 autocomplete="current-password"
                 :placeholder="__('Password')"
-                viewable
             />
 
             @if (Route::has('password.request'))

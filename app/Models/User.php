@@ -13,6 +13,24 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+    public function hasRole(string $role): bool
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+    public function blogs()
+    {
+        return $this->belongsToMany(Blog::class);
+    }
+    public function blog()
+    {
+        return $this->hasMany(Blog::class);
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -54,7 +72,7 @@ class User extends Authenticatable
     {
         return Str::of($this->name)
             ->explode(' ')
-            ->map(fn (string $name) => Str::of($name)->substr(0, 1))
+            ->map(fn(string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
     }
 }
