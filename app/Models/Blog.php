@@ -10,6 +10,7 @@ class Blog extends Model
         'title',
         'description',
         'image',
+        'image_public_id'
     ];
 
     public function users()

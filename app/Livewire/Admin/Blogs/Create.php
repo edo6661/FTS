@@ -11,7 +11,7 @@ class Create extends Component
 {
     use WithFileUploads;
     public Blog $blog;
-    public $image;
+    public $imageFile;
     public function mount()
     {
         $this->blog = new Blog();
@@ -21,17 +21,18 @@ class Create extends Component
         return [
             'blog.title' => 'required|string|max:255',
             'blog.description' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'imageFile' => 'image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
     public function save()
     {
+
         $this->validate();
         if ($this->blog->image     && file_exists(storage_path('app/public/' . $this->blog->image))) {
             unlink(storage_path('app/public/' . $this->blog->image));
         }
 
-        $this->blog->image = $this->image->store('images', 'public');
+        $this->blog->image = $this->imageFile->store('images', 'public');
         $this->blog->save();
         $this->blog->users()->attach(Auth::user()->id);
         session()->flash('success', 'Blog created successfully.');
