@@ -5,13 +5,14 @@
     />
     <form wire:submit="save"
         enctype="multipart/form-data"
+        class="space-y-4"
     >
         <flux:input label="Title" wire:model.live="blog.title" :invalid="$errors->has('blog.title')" type="text"/>
         <flux:input label="Description" wire:model.live="blog.description" :invalid="$errors->has('blog.description')" type="text"/>
             <flux:input label="Image" wire:model.live="imageFile" :invalid="$errors->has('imageFile')" type="file"/>
                 @if ($imageFile)
-            <img src="{{ $imageFile->temporaryUrl() }}" alt="Blog Image" class="w-16 h-16 object-cover rounded-lg">
-        @endif
+                <img src="{{ $imageFile->temporaryUrl() }}" alt="Blog Image" class="w-24 h-24 object-cover rounded-lg">
+            @endif
         <flux:button wire:loading.attr="disabled" wire:target="image" type="submit">
             <span wire:loading.remove wire:target="image">
                 Save

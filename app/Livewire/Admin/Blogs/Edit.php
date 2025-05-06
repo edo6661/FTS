@@ -18,7 +18,7 @@ class Edit extends Component
         return [
             'blog.title' => 'required|string|max:255',
             'blog.description' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'imageFile' => 'image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
     public function mount($id)
@@ -35,20 +35,22 @@ class Edit extends Component
 
         $oldImagePath = $this->blog->image;
 
-        if ($this->image) {
-            $newImagePath = $this->image->store('images', 'public');
-
-            if ($newImagePath) {
-                $this->blog->image = $newImagePath;
-
-                if ($oldImagePath) {
-                    Storage::disk('public')->delete($oldImagePath);
-                }
-            } else {
-                session()->flash('error', 'Gagal menyimpan image baru.');
-                return;
+        if ($this->imageFile) {
+            // Hapus gambar lama jika ada
+            if ($this->blog->image && Storage::disk('s3')->exists($this->blog->image)) {
+                Storage::disk('s3')->delete($this->blog->image);
             }
+
+            // Upload ke S3
+            $path = $this->imageFile->storeAs(
+                'images/blogs',
+                time() . '-' . $this->imageFile->getClientOriginalName(),
+                's3'
+            );
+
+            $this->blog->image = $path;
         }
+
 
         $this->blog->save();
 

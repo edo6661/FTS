@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Blog extends Model
 {
@@ -19,6 +20,6 @@ class Blog extends Model
     }
     public function getLogoUrlAttribute()
     {
-        return asset('storage/' . $this->image);
+        return env('AWS_URL') . '/' . $this->image;
     }
 }

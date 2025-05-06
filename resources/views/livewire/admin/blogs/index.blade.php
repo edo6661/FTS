@@ -13,7 +13,7 @@
                         Image
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Name
+                        Title
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Description
@@ -34,12 +34,17 @@
                 <tr class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
 
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <img src="{{ $blog->logo_url }}" alt="Blog Image" class="w-16 h-16 object-cover rounded-lg">
+                        <div class="text-xs text-gray-500">
+                            Debug Path: {{ $blog->image }}<br>
+                            Debug URL: {{ env('AWS_URL') . '/' . $blog->image }}<br>
+                            Storage URL: {{ Storage::disk('s3')->url($blog->image) }}
+                        </div>
+                    
                     </th>
                     <td class="px-6 py-4">
                         {{ $blog->title }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 text-xs">
                         {{ $blog->description }}
                     </td>
                     <td class="px-6 py-4">
