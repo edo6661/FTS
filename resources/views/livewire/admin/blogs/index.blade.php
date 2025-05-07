@@ -40,7 +40,7 @@
                         {{ $blog->title }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ $blog->description }}
+                        {{ $blog->description_trim }}
                     </td>
                     <td class="px-6 py-4">
                         {{ $blog->users[0]->name }}

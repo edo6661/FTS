@@ -5,6 +5,8 @@
     />
     <form wire:submit="edit"
         enctype="multipart/form-data"
+        class="space-y-4"
+    
     >
         <flux:input label="Title" wire:model.live="blog.title" :invalid="$errors->has('blog.title')" type="text"/>
         <flux:input label="Description" wire:model.live="blog.description" :invalid="$errors->has('blog.description')" type="text"/>

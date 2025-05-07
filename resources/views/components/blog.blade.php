@@ -1,3 +1,4 @@
+
 <section id="blog" class="flex flex-col py-8 text-center space-y-4 px-4 ">
     <p class="font-semibold text-lg">
         Our latest Blog
@@ -18,8 +19,10 @@
                 ['img' => 'images/blog-1.jpg', 'date' => '30 DEC 2024', 'title' => 'Smash Podcast Episode With Paul Boag', 'description' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem petech doloremque laudantium totam rem aperiam'],
             ];
         @endphp
-        @foreach ($blogPosts as $post)
-            <x-blog.item :img="$post['img']" :date="$post['date']" :title="$post['title']" :description="$post['description']" />
+        @foreach ($blogs as $blog)
+            <x-blog.item 
+                :blog="$blog"
+            />
         @endforeach
         
     </div>

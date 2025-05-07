@@ -14,7 +14,9 @@
                 <x-what-we-do/>
                 <x-banner-consultation/>
                 <x-team/>
-                <x-blog/>
+                <x-blog
+                    :blogs="$blogs"
+                />
             </main>
             <x-footer/>
         </body>

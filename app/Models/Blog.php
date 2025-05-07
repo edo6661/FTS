@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class Blog extends Model
 {
     protected $fillable = [
@@ -20,5 +20,8 @@ class Blog extends Model
     public function getLogoUrlAttribute()
     {
         return asset('storage/' . $this->image);
+    }
+    public function getDescriptionTrimAttribute() {
+        return Str::limit($this->description,100);
     }
 }
