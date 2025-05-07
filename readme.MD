@@ -47,8 +47,8 @@ Follow these steps to set up and run the project:
 1. Clone the repository (if you haven't already):
 
     ```bash
-    git clone [https://github.com/edo6661/FTS]
-    cd [FTS]
+     git clone [https://github.com/edo6661/FTS]
+     cd [FTS]
     ```
 
 2. Install PHP dependencies using Composer:
@@ -78,7 +78,15 @@ Follow these steps to set up and run the project:
     php artisan db:seed
     ```
 
-6. Run the development server:
+6. Create a symbolic link for storage:
+
+    ```bash
+    php artisan storage:link
+    ```
+
+    This step is essential for proper handling of images on the website.
+
+7. Run the development server:
     ```bash
     php artisan serve
     ```
@@ -107,3 +115,11 @@ The system comes with a pre-configured admin account that you can use to log in:
 
 -   Email: admin@gmail.com
 -   Password: 12345678
+
+## Troubleshooting
+
+-   **Images not displaying properly**: If images are not showing correctly on the website, make sure you have run the storage link command:
+    ```bash
+    php artisan storage:link
+    ```
+    This creates a symbolic link from `public/storage` to `storage/app/public`, allowing the web server to access uploaded files.
